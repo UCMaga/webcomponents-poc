@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PlainHTMLPage</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="/" />
+
+    <script>
+      window.sayHello = function (event) {
+        alert(`Outer Click Trigger, ${event}!`);
+      };
+    </script>
+  </head>
+
+  <body>
+    <app-root></app-root>
+    <script type="text/javascript" src="http://localhost:4202/main.js"></script>
+
+    <app-webcomponent data='["Ford", "BMW", "Fiat"]'>
+      <app-webcomponent slot="content" data='["Ford", "BMW", "Fiat"]'>
+      </app-webcomponent>
+    </app-webcomponent>
+    <uc-button func-prop="sayHello">
+      <div slot="content">Click me, slot!</div>
+    </uc-button>
+  </body>
+</html>

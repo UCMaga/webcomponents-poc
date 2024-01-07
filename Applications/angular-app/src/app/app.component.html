@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="content">
+    <app-webcomponent [data]="data">
+      <app-webcomponent slot="content" data='["Ford", "BMW", "Fiat"]'>
+      </app-webcomponent>
+    </app-webcomponent>
+    <uc-button [func-prop]="onClickHandler">
+      <div slot="content" onclick="()=>{console.log('test')}">
+        Click me, slot!
+      </div>
+    </uc-button>
+  </div>
+</main>
+
+<router-outlet></router-outlet>
